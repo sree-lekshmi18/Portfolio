@@ -1,0 +1,250 @@
+/**
+ * ==============================================================================
+ * BASE STYLES & LAYOUT SYSTEM
+ * Clean Cream Canvas with Mocha & Brown Typography
+ * ==============================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Reset & Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary); /* Clean #FAF7F0 Ivory Cream */
+  color: var(--text-primary);          /* Mocha #3B2A20 */
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(166, 124, 82, 0.22);
+  color: #3B2A20;
+}
+
+/* Global Typography - Mocha & Brown Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary); /* Mocha #3B2A20 */
+  font-weight: 400; /* Natural crisp weight of Doppio One */
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-secondary); /* Brown #7B5E4A */
+}
+
+a {
+  color: var(--text-accent);    /* Brown #7B5E4A */
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--palette-mocha);  /* Mocha #3B2A20 */
+}
+
+/* Custom Clean Cream Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--palette-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--palette-latte);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--palette-ivory);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--palette-brown);
+}
+
+/* Focus States for Accessibility */
+:focus-visible {
+  outline: 2px solid var(--palette-caramel);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Ambient Background Elements Removed for Clean Cream Canvas */
+#ambient-canvas,
+.ambient-glow-wrapper,
+.glow-orb {
+  display: none !important;
+}
+
+/* Page Layout Wrappers */
+.main-wrapper {
+  position: relative;
+  z-index: var(--z-content);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+  scroll-margin-top: 2rem;
+  scroll-margin-bottom: 6rem;
+}
+
+/* Section Header Component */
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto clamp(2.5rem, 6vw, 4rem) auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: var(--acrylic-bg-subtle);
+  backdrop-filter: var(--acrylic-blur-sm);
+  -webkit-backdrop-filter: var(--acrylic-blur-sm);
+  border: 1px solid var(--border-acrylic);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--palette-brown);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm), var(--acrylic-rim);
+}
+
+.section-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--palette-caramel);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  margin-bottom: 1rem;
+  color: var(--text-primary); /* Mocha #3B2A20 */
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: var(--text-secondary); /* Brown #7B5E4A */
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Typography Utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #3B2A20 0%, #7B5E4A 55%, #A67C52 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.text-accent {
+  color: var(--palette-caramel);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Smooth Entrance & Scroll Reveal Animations */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 80ms; }
+.delay-2 { transition-delay: 160ms; }
+.delay-3 { transition-delay: 240ms; }
+.delay-4 { transition-delay: 320ms; }
+.delay-5 { transition-delay: 400ms; }
+
+/* Micro-animations */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes borderGlowPulse {
+  0%, 100% {
+    border-color: var(--border-acrylic);
+    box-shadow: 0 0 0 rgba(166, 124, 82, 0);
+  }
+  50% {
+    border-color: var(--palette-caramel);
+    box-shadow: 0 0 14px rgba(166, 124, 82, 0.18);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

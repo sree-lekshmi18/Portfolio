@@ -1,0 +1,343 @@
+/**
+ * ==============================================================================
+ * CINEMATIC SPLIT-SCREEN INTRO ANIMATION — SREE LEKSHMI
+ * Seamless Warm Cream & Rich Espresso Changa One Split
+ * ==============================================================================
+ */
+
+/* 1. Intro Overlay Container */
+.cinematic-intro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  display: block;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: opacity, visibility;
+  transition: visibility 0.35s ease, opacity 0.35s ease;
+}
+
+.cinematic-intro.is-completed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none !important;
+}
+
+/* 2. Split Curtain Panels (Left & Right - 100% Seamless, Zero Partition Line) */
+.intro-curtain {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background-color: var(--intro-bg, #F5EFE3);
+  will-change: transform;
+  z-index: 1;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/* Left panel covers 0 to 50% */
+.intro-curtain-left {
+  left: 0;
+  width: 50vw;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Right panel covers 50% to 100% with 1px overlap to guarantee no subpixel gap */
+.intro-curtain-right {
+  left: calc(50vw - 1px);
+  width: calc(50vw + 1px);
+  transform: translate3d(0, 0, 0);
+}
+
+/* 3. Centralized Brand Layer (Single Unified Name SREELEKSHMI - Zero Space) */
+.intro-centered-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 !important; /* Zero space: SREELEKSHMI is one unified continuous name */
+  width: max-content;
+  max-width: 95vw;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 4. High-Impact Changa One Typography - Solid & Visible Immediately (No Appear Effect) */
+.intro-name {
+  display: inline-block;
+  font-family: 'Changa One', sans-serif;
+  font-size: clamp(1.8rem, 6.8vw, 6.2rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: clamp(0.01em, 0.04vw, 0.03em);
+  text-transform: uppercase;
+  color: var(--intro-espresso, #3B241B);
+  text-shadow: none;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}
+
+/* Initial State: Solid and Static (Appear Effect Avoided) */
+.intro-name-sree,
+.intro-name-lekshmi {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Phase 2: THE SPLIT — SREE splits from LEKSHMI as Curtains Open Outward */
+.cinematic-intro.is-splitting .intro-curtain-left {
+  transform: translate3d(-100.5%, 0, 0);
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cinematic-intro.is-splitting .intro-curtain-right {
+  transform: translate3d(100.5%, 0, 0);
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cinematic-intro.is-splitting .intro-name-sree {
+  transform: translate3d(calc(-50vw - 30%), 0, 0);
+  opacity: 0;
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.75s ease-in 0.15s;
+}
+
+.cinematic-intro.is-splitting .intro-name-lekshmi {
+  transform: translate3d(calc(50vw + 30%), 0, 0);
+  opacity: 0;
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.75s ease-in 0.15s;
+}
+
+/* Compatibility alias for is-revealing */
+.cinematic-intro.is-revealing .intro-curtain-left {
+  transform: translate3d(-100.5%, 0, 0);
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.cinematic-intro.is-revealing .intro-curtain-right {
+  transform: translate3d(100.5%, 0, 0);
+  transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* 5. Subtle Film Grain / Paper Texture Overlay */
+.intro-grain-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+/* 6. Skip Button for Speed & Accessibility */
+.intro-skip-btn {
+  position: absolute;
+  top: clamp(1.25rem, 3.5vw, 2.5rem);
+  right: clamp(1.25rem, 3.5vw, 2.5rem);
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: var(--intro-glass, rgba(255, 250, 241, 0.65));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--intro-border, #D8C8B5);
+  color: var(--intro-espresso, #3B241B);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(59, 36, 27, 0.05);
+  opacity: 0.75;
+  transform: translateY(0);
+  transition: all 0.25s ease;
+}
+
+.intro-skip-btn:hover {
+  opacity: 1;
+  background: #FFFFFF;
+  border-color: var(--intro-espresso, #3B241B);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 36, 27, 0.1);
+}
+
+.skip-key {
+  display: inline-block;
+  font-size: 0.7rem;
+  opacity: 0.65;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  background: rgba(59, 36, 27, 0.08);
+}
+
+/* 7. Landing Page Elements Synchronization */
+body.intro-active {
+  overflow: hidden !important;
+}
+
+body.intro-active #main-content,
+body.intro-active #main-header,
+body.intro-active .floating-nav-bar {
+  pointer-events: none;
+}
+
+/* Staged reveals for hero section as curtains part */
+body.intro-active .hero-title,
+body.intro-active .hero-description,
+body.intro-active .hero-cta-group,
+body.intro-active .availability-pill,
+body.intro-active .hero-highlights-strip,
+body.intro-active .fixed-top-logo,
+body.intro-active .floating-nav-bar {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reveal classes triggered at 1.55s */
+body.intro-revealing .fixed-top-logo {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.1s;
+}
+
+body.intro-revealing .availability-pill {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.15s;
+}
+
+body.intro-revealing .hero-title {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.22s;
+}
+
+body.intro-revealing .hero-description {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.32s;
+}
+
+body.intro-revealing .hero-cta-group {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.42s;
+}
+
+body.intro-revealing .hero-highlights-strip {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition-delay: 0.5s;
+}
+
+body.intro-revealing .floating-nav-bar {
+  opacity: 1 !important;
+  transform: translate3d(-50%, 0, 0) !important;
+  transition-delay: 0.45s;
+}
+
+/* When intro is completely finished, clean up all transition locks */
+body.intro-complete .hero-title,
+body.intro-complete .hero-description,
+body.intro-complete .hero-cta-group,
+body.intro-complete .availability-pill,
+body.intro-complete .hero-highlights-strip,
+body.intro-complete .fixed-top-logo,
+body.intro-complete .floating-nav-bar {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+body.intro-complete .floating-nav-bar {
+  transform: translateX(-50%);
+}
+
+/* 8. Responsive Adjustments for Mobile & Tablet */
+@media (max-width: 768px) {
+  .intro-name {
+    font-size: clamp(1.6rem, 7vw, 3.2rem);
+  }
+
+  .intro-skip-btn {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-name {
+    font-size: clamp(1.4rem, 6.5vw, 2.4rem);
+  }
+}
+
+/* 9. Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-intro {
+    display: none !important;
+  }
+
+  body.intro-active {
+    overflow: auto !important;
+  }
+
+  body.intro-active .hero-title,
+  body.intro-active .hero-description,
+  body.intro-active .hero-cta-group,
+  body.intro-active .availability-pill,
+  body.intro-active .hero-highlights-strip,
+  body.intro-active .fixed-top-logo,
+  body.intro-active .floating-nav-bar {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* 10. Replay Button Styling in Footer */
+.btn-replay-intro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--palette-caramel, #A67C52);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color var(--transition-fast, 0.2s);
+}
+
+.btn-replay-intro:hover {
+  color: var(--palette-mocha, #3B2A20);
+}

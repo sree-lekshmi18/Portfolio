@@ -1,0 +1,204 @@
+/**
+ * ==============================================================================
+ * GLASS SURFACE COMPONENT CSS (REACT BITS)
+ * Optical Refraction, Chromatic Dispersion & Crystal Frosted Glass
+ * ==============================================================================
+ */
+
+.glass-surface {
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.26s ease-out, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  color-scheme: light;
+}
+
+.glass-surface:not(.as-card):not(.as-panel) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-surface__filter {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.glass-surface__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all host element children sit cleanly above glass sheen and rim */
+.glass-surface > :not(.glass-surface__filter):not(.glass-surface__sheen):not(.glass-surface__rim):not(.glass-surface__canvas):not(.glass-surface__frame):not(.glass-surface__line):not(.glass-surface__glow) {
+  position: relative;
+  z-index: 1;
+}
+
+/* SVG Filter Optical Refraction (Chromium) */
+.glass-surface--svg {
+  background: rgba(255, 255, 255, var(--glass-frost, 0.45));
+  backdrop-filter: var(--filter-id, url(#glass-filter)) saturate(var(--glass-saturation, 1.2));
+  -webkit-backdrop-filter: var(--filter-id, url(#glass-filter)) saturate(var(--glass-saturation, 1.2));
+  border: 1px solid rgba(74, 46, 31, 0.12);
+  box-shadow:
+    0 0 2px 1px rgba(255, 255, 255, 0.6) inset,
+    0 0 12px 2px rgba(255, 255, 255, 0.3) inset,
+    0 4px 16px rgba(74, 46, 31, 0.06),
+    0 8px 32px rgba(74, 46, 31, 0.09),
+    0 16px 48px rgba(74, 46, 31, 0.12),
+    0 4px 16px rgba(255, 255, 255, 0.4) inset,
+    0 8px 24px rgba(74, 46, 31, 0.04) inset;
+}
+
+/* WebGL Refraction */
+.glass-surface--webgl {
+  background: rgba(255, 255, 255, var(--glass-frost, 0.4));
+  border: 1px solid rgba(74, 46, 31, 0.12);
+  box-shadow:
+    0 4px 16px rgba(74, 46, 31, 0.06),
+    0 8px 24px rgba(74, 46, 31, 0.09),
+    0 16px 48px rgba(74, 46, 31, 0.12);
+}
+
+.glass-surface__canvas,
+.glass-surface__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glass-surface__frame {
+  background: rgba(255, 255, 255, var(--glass-frost, 0.45));
+  box-shadow:
+    0 0 2px 1px rgba(255, 255, 255, 0.6) inset,
+    0 0 10px 4px rgba(255, 255, 255, 0.3) inset,
+    0 4px 16px rgba(74, 46, 31, 0.06) inset,
+    0 8px 24px rgba(74, 46, 31, 0.09) inset,
+    0 16px 48px rgba(74, 46, 31, 0.12) inset;
+}
+
+/* High-End Frosted Glass Fallback (Safari / Firefox & Non-SVG filter runtimes) */
+.glass-surface--fallback {
+  background: rgba(255, 255, 255, calc(0.45 + var(--glass-frost, 0) * 0.3));
+  -webkit-backdrop-filter: blur(14px) saturate(calc(var(--glass-saturation, 1) * 1.3)) brightness(1.02);
+  backdrop-filter: blur(14px) saturate(calc(var(--glass-saturation, 1) * 1.3)) brightness(1.02);
+  border: 1px solid rgba(74, 46, 31, 0.12);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 0 rgba(74, 46, 31, 0.06),
+    0 0 2px 1px rgba(255, 255, 255, 0.6) inset,
+    0 0 12px 3px rgba(255, 255, 255, 0.3) inset,
+    0 4px 16px rgba(74, 46, 31, 0.06),
+    0 8px 24px rgba(74, 46, 31, 0.09),
+    0 16px 48px rgba(74, 46, 31, 0.12);
+}
+
+/* Specular Crystal Sheen */
+.glass-surface__sheen,
+.glass-surface__rim {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glass-surface__sheen {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    transparent 42%,
+    transparent 64%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.glass-surface:hover .glass-surface__sheen {
+  opacity: 1;
+}
+
+/* 3px Precision Specular Rim Highlight */
+.glass-surface__rim {
+  padding: 1.5px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.38),
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.04) 60%,
+    rgba(255, 255, 255, 0.22)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.glass-surface:hover .glass-surface__rim {
+  opacity: 1;
+  background: linear-gradient(
+    150deg,
+    rgba(166, 124, 82, 0.4),
+    rgba(255, 255, 255, 0.2) 45%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(166, 124, 82, 0.3)
+  );
+}
+
+.glass-surface__line,
+.glass-surface__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.glass-surface--svg .glass-surface__line,
+.glass-surface--webgl .glass-surface__line {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.glass-surface--svg .glass-surface__glow,
+.glass-surface--webgl .glass-surface__glow {
+  background: rgba(166, 124, 82, 0.12);
+}
+
+.glass-surface--fallback .glass-surface__line {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.glass-surface--fallback .glass-surface__glow {
+  background: rgba(166, 124, 82, 0.1);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-surface--fallback {
+    background: #F2E7D5;
+  }
+}
+
+.glass-surface:focus-visible {
+  outline: 2px solid #A67C52;
+  outline-offset: 2px;
+}

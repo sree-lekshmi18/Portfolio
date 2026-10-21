@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Sree Lekshmi Shaji | Developer Portfolio</title>
+  <meta name="title" content="Sree Lekshmi Shaji | Developer Portfolio">
+  <meta name="description"
+    content="Personal portfolio of Sree Lekshmi Shaji: Full-Stack Developer & Embedded Systems Specialist. Building resilient architectures and elegant digital experiences.">
+  <meta name="keywords"
+    content="Sree Lekshmi Shaji, Portfolio, Software Engineer, Full Stack Developer, Embedded Systems, ECE, Acrylic UI, Minimalist Design, Web Development, TypeScript, React, Python">
+  <meta name="author" content="Sree Lekshmi Shaji">
+  <meta name="theme-color" content="#FAF7F0">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.local/">
+  <meta property="og:title" content="Sree Lekshmi Shaji · Developer Portfolio">
+  <meta property="og:description"
+    content="Building Digital Experiences. Solving Real Problems. Explore projects, engineering milestones, and technical expertise.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Sree Lekshmi Shaji · Developer Portfolio">
+  <meta property="twitter:description" content="Building Digital Experiences. Solving Real Problems.">
+
+  <!-- Favicon SVG (Coffee & Cream Geometric Prism) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 29,9 29,23 16,30 3,23 3,9' fill='%2324140D' stroke='%238D5B4C' stroke-width='2'/%3E%3Cpolygon points='16,6 25,11 25,21 16,26 7,21 7,11' fill='none' stroke='rgba(253,251,247,0.6)' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23EDE5D8'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Doppio+One&family=JetBrains+Mono:wght@400;500&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/SlingButton.css">
+  <link rel="stylesheet" href="assets/css/CinematicIntro.css">
+</head>
+
+<body class="intro-active">
+
+  <!-- ====================================================================
+       CINEMATIC SPLIT-SCREEN INTRO (SREE LEKSHMI)
+       Seamless Warm Cream & Rich Espresso Changa One Animation
+       ==================================================================== -->
+  <aside id="cinematic-intro" class="cinematic-intro" aria-label="Website Introduction">
+    <!-- Left Curtain Panel (Slides Left on Split) -->
+    <div class="intro-curtain intro-curtain-left"></div>
+
+    <!-- Right Curtain Panel (Slides Right on Split) -->
+    <div class="intro-curtain intro-curtain-right"></div>
+
+    <!-- Centralized Single Name Layer (SREELEKSHMI with zero gap) -->
+    <div class="intro-centered-brand" id="intro-brand">
+      <span class="intro-name intro-name-sree" id="intro-sree">SREEL</span><span class="intro-name intro-name-lekshmi"
+        id="intro-lekshmi">EKSHMI</span>
+    </div>
+
+    <!-- Subtle Paper/Film Grain Texture Overlay -->
+    <div class="intro-grain-overlay"></div>
+
+    <!-- Skip Button for Speed & Accessibility -->
+    <button type="button" class="intro-skip-btn" id="intro-skip-btn" aria-label="Skip website intro">
+      <span>Skip</span>
+      <span class="skip-key">↵</span>
+    </button>
+  </aside>
+
+
+  <!-- Header Navigation System -->
+  <header id="main-header">
+    <!-- Brand Logo: Fixed at top-left corner ALWAYS -->
+    <a href="#hero" class="fixed-top-logo" aria-label="Sree Lekshmi Shaji - Home">
+      <img src="assets/images/logo.png" alt="Sree Lekshmi Shaji" class="brand-logo-img">
+    </a>
+
+    <!-- Floating Navigation Bar: Centered floating pill -->
+    <nav class="floating-nav-bar" id="main-nav-bar" aria-label="Main Navigation">
+      <ul class="floating-nav-links" role="list">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#milestones" class="nav-link">Experience</a></li>
+        <li><a href="#collaborate" class="nav-link">Collaborate</a></li>
+      </ul>
+
+      <div class="floating-nav-cta">
+        <a href="#collaborate" class="btn btn-secondary btn-sm">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Hamburger Toggle: Fixed at top-right on smaller screens -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+      aria-controls="mobile-nav-drawer">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation Menu">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="#hero" class="mobile-drawer-logo" aria-label="Sree Lekshmi Shaji - Home">
+          <div class="mobile-logo-pill">
+            <img src="assets/images/logo.png" alt="Sree Lekshmi Shaji" class="brand-logo-img">
+          </div>
+        </a>
+        <button class="btn-icon" id="mobile-drawer-close-btn" aria-label="Close menu">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#milestones" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#collaborate" class="mobile-nav-link">Collaborate</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="#collaborate" class="btn btn-primary" style="width: 100%;">
+        <span>Let's Collaborate</span>
+        <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper" id="main-content">
+
+    <!-- ====================================================================
+         SECTION 1: LANDING / HERO
+         ==================================================================== -->
+    <section class="section hero-section" id="hero" aria-label="Hero Introduction">
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-grid">
+
+          <!-- Hero Text Content -->
+          <div class="hero-content reveal-init">
+            <!-- Availability Pill -->
+            <div class="availability-pill" role="status" aria-live="polite">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="hero-availability-text">Available for new opportunities & collaborations</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="hero-title" id="hero-headline">
+              Building <span class="gradient-text">Digital Experiences</span>. Solving Real Problems.
+            </h1>
+
+            <!-- Introduction -->
+            <p class="hero-description" id="hero-description">
+              A passionate technology enthusiast, developer, and creative problem solver focused on building scalable
+              web architectures, resilient distributed systems, and refined crystal-clear user interfaces.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore My Work</span>
+                <i data-lucide="arrow-down" style="width: 16px; height: 16px;"></i>
+              </a>
+              <a href="#collaborate" class="btn btn-secondary">
+                <span>Let's Collaborate</span>
+                <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+              </a>
+            </div>
+
+            <!-- Hero Highlights Strip -->
+            <div class="hero-highlights-strip">
+              <span class="hero-highlight-pill"><i data-lucide="cpu"></i> Embedded Systems</span>
+              <span class="hero-highlight-pill"><i data-lucide="zap"></i> BE ECE</span>
+              <span class="hero-highlight-pill"><i data-lucide="sparkles"></i> Hardware &amp; Firmware</span>
+            </div>
+
+            <!-- Social Links Strip -->
+            <div class="hero-social-strip">
+              <span class="social-strip-label">Connect:</span>
+              <div id="hero-social-links" style="display: flex; gap: 0.5rem;">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: ABOUT ME
+         ==================================================================== -->
+    <section class="section about-section" id="about" aria-label="About Me">
+      <div class="container">
+
+        <header class="section-header reveal-init">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            <span>About Me</span>
+          </div>
+          <h2 class="section-title">A Little About Me</h2>
+          <p class="section-subtitle">Turning ideas into working prototypes where hardware meets software.</p>
+        </header>
+
+        <div class="about-grid">
+
+          <!-- Profile Card Column -->
+          <div class="acrylic-card about-profile-card reveal-init">
+            <div class="profile-avatar-container profile-empty-card" id="about-profile-empty-card"
+              aria-label="Empty profile card placeholder">
+              <div class="empty-card-blueprint">
+                <div class="empty-card-corners">
+                  <span class="corner-mark top-left"></span>
+                  <span class="corner-mark top-right"></span>
+                  <span class="corner-mark bottom-left"></span>
+                  <span class="corner-mark bottom-right"></span>
+                </div>
+                <div class="empty-card-inner">
+                  <div class="empty-card-icon-halo">
+                    <i data-lucide="cpu" class="empty-card-icon"></i>
+                  </div>
+                  <div class="empty-card-badge">BE · ECE</div>
+                  <span class="empty-card-caption">Embedded Systems &amp; IoT</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="profile-name" id="about-profile-name">Sree Lekshmi Shaji</h3>
+            <p class="profile-role" id="about-profile-role">First-Year ECE Student · Embedded Systems &amp; IoT</p>
+            <div class="profile-meta-chips" id="about-meta-chips">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Biography & Education Column -->
+          <div class="about-narrative reveal-init delay-1">
+            <div id="about-bio-container" style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Injected via JS -->
+            </div>
+
+            <!-- Education Box -->
+            <div id="about-education-container">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Values Cards (Left) & Areas of Technical Interest (Right) -->
+        <div class="about-values-interests-split reveal-init delay-2">
+          <!-- Left: 3 Value Highlight Cards -->
+          <div class="about-values-col">
+            <div class="values-grid" id="about-values-grid">
+              <!-- Injected via JS: Hardware Meets Software, Prototyping & Validation, Collaborative Growth -->
+            </div>
+          </div>
+
+          <!-- Right: Areas of Technical Interest Card -->
+          <div class="acrylic-card about-interests-card">
+            <div class="interests-card-header">
+              <div class="interests-icon-badge">
+                <i data-lucide="compass"></i>
+              </div>
+              <div>
+                <h4 class="interests-card-title">Areas of Technical Interest</h4>
+                <p class="interests-card-subtitle">Key engineering focus &amp; domains</p>
+              </div>
+            </div>
+            <div class="interest-tags-wrapper" id="about-interests-container">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: SKILLS & TECHNOLOGIES
+         ==================================================================== -->
+    <section class="section skills-section" id="skills" aria-label="Skills and Technologies">
+      <div class="container">
+
+        <header class="section-header reveal-init">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            <span>Technical Proficiency</span>
+          </div>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <p class="section-subtitle">Where hardware meets software: embedded firmware, physical electronics, and modern
+            web development.</p>
+        </header>
+
+        <!-- 5 Skills Categories Grid -->
+        <div class="skills-category-grid" id="skills-grid-container">
+          <!-- Injected via JavaScript from PORTFOLIO_DATA -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: FEATURED PROJECTS
+         ==================================================================== -->
+    <section class="section projects-section" id="projects" aria-label="Featured Projects">
+      <div class="container">
+
+        <header class="section-header reveal-init">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            <span>Selected Works</span>
+          </div>
+          <h2 class="section-title">Featured Project</h2>
+          <p class="section-subtitle">An AI-powered multi-model application comparing resumes with job descriptions to deliver ATS scores and actionable feedback.</p>
+        </header>
+
+        <!-- Category Filters (Hidden for Single Project) -->
+        <div class="projects-filter-bar reveal-init" role="tablist" aria-label="Filter Projects" style="display: none;">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid single-project" id="projects-grid-container">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Section CTA Banner -->
+        <div class="project-cta-banner reveal-init">
+          <h3 class="banner-title">Have an idea? Let's build it.</h3>
+          <p class="banner-desc">From concept architecture to deployment, let's collaborate on software that makes a
+            genuine difference.</p>
+          <a href="#collaborate" class="btn btn-primary">
+            <span>Start a Conversation</span>
+            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: MILESTONES & EXPERIENCE
+         ==================================================================== -->
+    <section class="section milestones-section" id="milestones" aria-label="Milestones and Experience">
+      <div class="container">
+
+        <header class="section-header reveal-init">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            <span>Education &amp; Experience</span>
+          </div>
+          <h2 class="section-title">Milestones &amp; Experience</h2>
+          <p class="section-subtitle">Academic journey, engineering foundation, and hands-on learning at Chennai
+            Institute of Technology.</p>
+        </header>
+
+        <!-- Timeline Container -->
+        <div class="timeline-wrapper single-milestone">
+          <div class="timeline-line" aria-hidden="true" style="display: none;"></div>
+          <div id="timeline-entries-container">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: COLLABORATE / CONTACT
+         ==================================================================== -->
+    <section class="section collaborate-section" id="collaborate" aria-label="Collaborate and Contact">
+      <div class="container">
+
+        <header class="section-header reveal-init">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            <span>Get in Touch</span>
+          </div>
+          <h2 class="section-title">Let's Create Something Meaningful.</h2>
+          <p class="section-subtitle">Have an idea, a project, or an opportunity in mind? Let's connect and turn it into
+            something impactful.</p>
+        </header>
+
+        <div class="collaborate-grid">
+
+          <!-- Interactive Form Panel -->
+          <div class="acrylic-panel form-panel reveal-init">
+            <form id="collaborate-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Morgan"
+                  required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address</label>
+                <input type="email" id="contact-email" name="email" class="form-input"
+                  placeholder="e.g. alex@company.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input"
+                  placeholder="e.g. Project Inquiry / Collaboration Proposal" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Interested In (Optional)</label>
+                <div class="interests-selection-group" id="interests-chips-container">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" name="message" class="form-textarea"
+                  placeholder="Describe your vision, goals, or inquiry in detail..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="form-submit-btn" style="width: 100%;">
+                <span>Send Message</span>
+                <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+              </button>
+
+              <div class="form-feedback" id="form-feedback" role="alert"></div>
+            </form>
+          </div>
+
+          <!-- Contact Information & Channels -->
+          <div class="contact-info-cards reveal-init delay-1">
+
+            <!-- Email Card -->
+            <div class="acrylic-card contact-card">
+              <div class="contact-icon-box">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">Direct Email</div>
+                <a href="mailto:ssreelekshmi821@gmail.com" id="contact-email-val"
+                  class="contact-detail-value">ssreelekshmi821@gmail.com</a>
+              </div>
+              <button class="btn btn-secondary btn-icon copy-btn" id="copy-email-btn" aria-label="Copy email address"
+                title="Copy email address">
+                <i data-lucide="copy" style="width: 15px; height: 15px;"></i>
+              </button>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="acrylic-card contact-card">
+              <div class="contact-icon-box">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">LinkedIn Network</div>
+                <a href="https://www.linkedin.com/in/sreelekshmi-shaji-920bb942b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BajTx0bKSQ8u1r0lVdcplgw%3D%3D"
+                  target="_blank" rel="noopener noreferrer" id="contact-linkedin-val"
+                  class="contact-detail-value">Connect on LinkedIn</a>
+              </div>
+            </div>
+
+            <!-- GitHub Card -->
+            <div class="acrylic-card contact-card">
+              <div class="contact-icon-box">
+                <i data-lucide="github"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">GitHub Repositories</div>
+                <a href="https://github.com/sree-lekshmi18" target="_blank" rel="noopener noreferrer"
+                  id="contact-github-val" class="contact-detail-value">Explore Code on GitHub</a>
+              </div>
+            </div>
+
+            <!-- Location & Availability Card -->
+            <div class="acrylic-card contact-card">
+              <div class="contact-icon-box">
+                <i data-lucide="globe"></i>
+              </div>
+              <div>
+                <div class="contact-detail-title">Location &amp; Timezone</div>
+                <div id="contact-location-val" class="contact-detail-value">India · IST (UTC+5:30)</div>
+                <div style="font-size: 0.8rem; color: var(--status-available); margin-top: 0.25rem;">Available Worldwide
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SECTION 7: FOOTER
+       ==================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+        <a href="#hero" class="footer-logo-link" aria-label="Sree Lekshmi Shaji - Back to Top">
+          <div class="footer-logo-pill">
+            <img src="assets/images/logo.png" alt="Sree Lekshmi Shaji" class="brand-logo-img">
+          </div>
+        </a>
+
+        <ul class="footer-nav-links" role="list">
+          <li><a href="#hero" class="footer-nav-link">Home</a></li>
+          <li><a href="#about" class="footer-nav-link">About</a></li>
+          <li><a href="#skills" class="footer-nav-link">Skills</a></li>
+          <li><a href="#projects" class="footer-nav-link">Projects</a></li>
+          <li><a href="#milestones" class="footer-nav-link">Experience</a></li>
+          <li><a href="#collaborate" class="footer-nav-link">Collaborate</a></li>
+        </ul>
+
+        <div class="footer-social-strip" id="footer-social-links">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p class="footer-closing" id="footer-closing-line">Designed with purpose. Built with curiosity.</p>
+          <div class="footer-meta-row">
+            <span id="footer-copyright">© 2026 Sree Lekshmi Shaji. All rights reserved.</span>
+            <span class="footer-meta-divider" aria-hidden="true">•</span>
+            <span id="footer-built-with">Strict Pure HTML5 · Modern CSS3 · Vanilla JavaScript</span>
+            <span class="footer-meta-divider" aria-hidden="true">•</span>
+            <button type="button" class="btn-replay-intro" onclick="window.replayIntro()"
+              title="Replay the cinematic split-screen intro">Replay Intro ✦</button>
+          </div>
+        </div>
+
+        <div class="footer-bottom-right">
+          <div class="footer-sling-dock" id="footer-sling-container"
+            title="Slingshot back to top! Pull and release, or click to launch.">
+            <!-- React Bits <SlingButton /> component mounted here -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Quick-View Modal Dialog -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-hidden="true">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close project modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modal-content-body">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts (Strictly Pure Vanilla HTML5, CSS3, ESNext) -->
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/Galaxy.js"></script>
+  <script src="assets/js/SlingButton.js"></script>
+  <script src="assets/js/portfolio-data.js"></script>
+  <script src="assets/js/background-fx.js"></script>
+  <script src="assets/js/CinematicIntro.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+/**
+ * ==============================================================================
+ * DESIGN SYSTEM TOKENS - MOCHA, BROWN & CLEAN CREAM PALETTE
+ * Referenced exactly from palette swatch:
+ * - Mocha (Dark Chocolate): #3B2A20
+ * - Brown (Walnut Brown):   #7B5E4A
+ * - Caramel:                #A67C52
+ * - Latte (Warm Beige):     #D1B89A
+ * - Cream (Vanilla Cream):  #F2E7D5
+ * - Ivory (Soft Ivory):     #FAF7F0
+ * ==============================================================================
+ */
+
+:root {
+  /* Core Reference Swatch Palette */
+  --palette-mocha: #3B2A20;       /* Rich, warm, deep dark chocolate mocha */
+  --palette-brown: #7B5E4A;       /* Grounded, warm, natural walnut brown */
+  --palette-caramel: #A67C52;     /* Warm golden caramel accent */
+  --palette-latte: #D1B89A;       /* Soft, smooth, cozy warm beige */
+  --palette-cream: #F2E7D5;       /* Gentle, warm, minimal vanilla cream */
+  --palette-ivory: #FAF7F0;       /* Clean, light, airy soft ivory */
+
+  /* Cinematic Intro Palette (Editorial Luxury Cream & Espresso) */
+  --intro-bg: #F5EFE3;            /* Warm cream background */
+  --intro-espresso: #3B241B;      /* Primary espresso typography */
+  --intro-brown-secondary: #6B4A3B; /* Secondary warm brown */
+  --intro-border: #D8C8B5;        /* Soft editorial border */
+  --intro-glass: rgba(255, 250, 241, 0.65); /* Glass surface */
+  --intro-shadow: rgba(59, 36, 27, 0.08);   /* Soft warm shadow */
+  --font-intro: 'Changa One', sans-serif;
+
+  /* Clean Background Colors */
+  --bg-primary: #FAF7F0;          /* Clean airy soft ivory background */
+  --bg-secondary: #F2E7D5;        /* Gentle vanilla cream */
+  --bg-tertiary: #E8DCBE;         /* Warm latte tone */
+  --bg-canvas: #FAF7F0;          /* Clean canvas */
+  --bg-card: #FFFFFF;             /* Crisp clean white surface */
+  --bg-card-subtle: #F2E7D5;      /* Warm vanilla cream card */
+
+  /* Acrylic Material Surfaces & Translucency */
+  --acrylic-bg: rgba(255, 255, 255, 0.72);
+  --acrylic-bg-subtle: rgba(242, 231, 213, 0.52);
+  --acrylic-bg-elevated: rgba(255, 255, 255, 0.90);
+  --acrylic-bg-hover: rgba(255, 255, 255, 0.94);
+  --acrylic-bg-dark: rgba(33, 21, 16, 0.92);
+
+  /* Acrylic Blurs & Saturation Diffusion */
+  --acrylic-blur: blur(20px) saturate(160%);
+  --acrylic-blur-sm: blur(12px) saturate(140%);
+  --acrylic-blur-lg: blur(28px) saturate(180%);
+
+  /* Acrylic Borders, Dividers & Highlights */
+  --acrylic-border: rgba(209, 184, 154, 0.38);
+  --acrylic-border-subtle: rgba(209, 184, 154, 0.22);
+  --acrylic-border-focus: rgba(166, 124, 82, 0.55);
+  --acrylic-rim: inset 0 1px 1px 0 rgba(255, 255, 255, 0.85);
+  --acrylic-rim-elevated: inset 0 1px 1.5px 0 #FFFFFF;
+  --acrylic-rim-dark: inset 0 1px 1px 0 rgba(255, 255, 255, 0.14);
+
+  /* Compatibility Aliases */
+  --glass-surface-subtle: var(--acrylic-bg-subtle);
+  --glass-surface: var(--acrylic-bg);
+  --glass-surface-elevated: var(--acrylic-bg-elevated);
+  --glass-surface-active: #F2E7D5;
+  --glass-border-hairline: var(--acrylic-border-subtle);
+  --glass-border: var(--acrylic-border);
+  --glass-border-highlight: var(--acrylic-border-focus);
+  --glass-border-glow: #A67C52;
+
+  /* Typography Colors - Direct From Palette Reference */
+  --text-primary: #3B2A20;        /* Mocha: Main headlines, titles, prominent text */
+  --text-secondary: #7B5E4A;      /* Brown: Body copy, descriptions, details */
+  --text-muted: #A67C52;          /* Caramel: Captions, dates, subtitles */
+  --text-accent: #7B5E4A;         /* Brown: Links and secondary accents */
+  --text-caramel: #A67C52;        /* Caramel: Highlight accents */
+  --text-inverse: #FAF7F0;        /* Soft Ivory: Text on dark buttons/chips */
+
+  /* Accent & Status */
+  --accent-silver: #7B5E4A;       /* Brown */
+  --accent-platinum: #3B2A20;     /* Mocha */
+  --accent-graphite: #D1B89A;     /* Latte */
+  --accent-glow: rgba(166, 124, 82, 0.16);
+  --accent-glow-subtle: rgba(166, 124, 82, 0.06);
+  --status-available: #2E7D32;    /* Earthy forest emerald green */
+  --status-available-glow: rgba(46, 125, 50, 0.25);
+
+  /* Gradients */
+  --gradient-crystal: linear-gradient(135deg, #FFFFFF 0%, #F2E7D5 100%);
+  --gradient-silver-text: linear-gradient(135deg, #3B2A20 0%, #7B5E4A 55%, #A67C52 100%);
+  --gradient-glass-card: linear-gradient(145deg, #FFFFFF 0%, #FAF7F0 100%);
+  --gradient-glow-radial: none;
+
+  /* Typography Fonts - Doppio One for Headings & Lato for Body Text */
+  --font-heading: 'Doppio One', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Doppio One', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: var(--font-sans);
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+
+  /* Backdrop Filters */
+  --backdrop-blur-sm: blur(6px);
+  --backdrop-blur: blur(12px);
+  --backdrop-blur-lg: blur(20px);
+
+  /* Shadows - Acrylic Soft Depth & Inner Highlights */
+  --shadow-sm: 0 2px 8px rgba(59, 42, 32, 0.04);
+  --shadow-acrylic: 0 8px 30px -4px rgba(59, 42, 32, 0.07), 0 2px 8px rgba(59, 42, 32, 0.03);
+  --shadow-acrylic-hover: 0 16px 36px -6px rgba(59, 42, 32, 0.12), 0 4px 14px rgba(59, 42, 32, 0.05);
+  --shadow-acrylic-deep: 0 24px 60px -8px rgba(33, 21, 16, 0.22);
+  --shadow-glass: var(--shadow-acrylic);
+  --shadow-crystal: var(--shadow-acrylic-hover);
+  --shadow-glow: none;
+  --shadow-inner-crystal: var(--acrylic-rim);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions & Animation Timings */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout Spacing */
+  --container-max-width: 1240px;
+  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+  --section-spacing: clamp(5rem, 10vw, 8.5rem);
+  --header-height: 72px;
+
+  /* Z-Index Hierarchy */
+  --z-bg: 0;
+  --z-canvas: 1;
+  --z-content: 10;
+  --z-header: 100;
+  --z-modal: 1000;
+  --z-toast: 2000;
+}
