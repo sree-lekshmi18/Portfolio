@@ -84,21 +84,6 @@ Open that file to update:
 
 ---
 
-## 🚀 Running Locally
-
-You can run the portfolio locally using any static web server:
-
-```powershell
-# Using Python (already installed)
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your browser.
-
-Or simply double-click `index.html` to open it in any modern browser.
-
----
-
 ## 🌐 Deploying to the Web
 
 This portfolio is 100% static, fast, and self-contained. You can deploy it for free in seconds:
